@@ -22,14 +22,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	      .antMatchers("/user/**").hasAnyRole("USER") 
 	      .antMatchers("/admin/**").hasAnyRole("ADMIN")
 	      .antMatchers("/**").permitAll();
-	      
+	   
 	      http.formLogin(); //스프링 시큐리티에 있는 기본 로그인 폼을 사용하겠다.
 	}
 	   @Override
 	   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-	       
+	   //   권한이 어드민인것만 치고 들어오라는것    
 	      auth.inMemoryAuthentication()
-	           .withUser("user").password("{noop}user").roles("USER").and()
+	           .withUser("user").password("{noop}user").roles("USER").and() //roles 권한
 	           .withUser("admin").password("{noop}admin").roles("ADMIN");
 	   
 	   }

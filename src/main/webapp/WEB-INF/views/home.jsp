@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<img src="/img/bey.gif">
 	홈입니다.
 </body>
 </html>
