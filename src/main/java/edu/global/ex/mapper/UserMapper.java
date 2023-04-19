@@ -16,4 +16,6 @@ public interface UserMapper {
 	@Insert("insert into AUTHORITIES (username,AUTHORITY) values(#{username},'ROLE_USER')")
 	public void insertAuthorities(UserVO UserVO);
 
+	@Insert("insert into AUTHORITIES (username,AUTHORITY) values(#{username},'ROLE_ADMIN')")
+	public void insertAdminAuthorities(UserVO UserVO);
 }

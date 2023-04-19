@@ -25,15 +25,36 @@ class UserMapperTest {
 //
 //      @Insert("insert into AUTHORITIES (username,AUTHORITY) values(#{username},'ROLE_USER')")
 //      public void insertAuthorities(UserVO UserVO);
+		/*
+		 * UserVO user = new UserVO(); user.setUsername("kim2"); user.setPassword(new
+		 * BCryptPasswordEncoder().encode("kim2")); user.setEnabled(1);
+		 * 
+		 * userMapper.insertUser(user); userMapper.insertAuthorities(user);
+		 */
       
       UserVO user = new UserVO();
-      user.setUsername("kim2");
-      user.setPassword(new BCryptPasswordEncoder().encode("kim2"));
+      user.setUsername("kim3");
+      user.setPassword(new BCryptPasswordEncoder().encode("kim3"));
       user.setEnabled(1);
             
       userMapper.insertUser(user);
       userMapper.insertAuthorities(user);
 		
 	}
-
+	
+	@Test
+	void testInserAdminuUser() {
+		
+	      
+	      UserVO user = new UserVO();
+	      user.setUsername("admin2");
+	      user.setPassword(new BCryptPasswordEncoder().encode("admin2"));
+	      user.setEnabled(1);
+	            
+	      userMapper.insertUser(user);
+	      userMapper.insertAdminAuthorities(user);
+			
+		
+		
+	}
 }
